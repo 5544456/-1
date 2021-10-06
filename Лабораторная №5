@@ -1,0 +1,78 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void tree()
+{
+	double A, B, C;
+	cout << "Задание 2: Введите A,B,C " << endl << endl;
+	cin >> A >> B >> C;
+	cout << "Длина отрезка AC = " << abs(A - C) << endl;;
+	cout << "Длина отрезка BC = " << abs(B - C) << endl;
+	cout << "Сумма отрезков AB и BC = " << abs(A - C) + abs(B - C) << endl<< endl << endl;
+}
+
+void TochkaC()
+{
+	cout << "Задание 3: Найти произведение длин отрезков AC и BC " << endl << endl;
+	cout << "Введите точки A,B,C:" << endl;
+	double A, B, C;
+	cin >> A >> B >> C;
+	cout << "Произведение длин отрезков AC и BC = " << abs(A - C) * abs(B - C)<<endl<<endl<<endl;
+}
+
+void Pramougl()
+{
+	cout << "Задание 4: Найти периметр и площадь прямоугольника" << endl<<endl;
+	double x1, x2, y1, y2;
+	cout << "Введите координаты x1,у1:" << endl;
+	cin >> x1 >> y1;
+	cout << "Введите координаты х2,y2" << endl;
+	cin >> x2 >> y2;
+	cout << "Периметр прямоугольника равен = " << (abs(x1 - x2) + abs(y1 - y2)) * 2 << endl;
+	cout << "Площадь прямоугольника равна = " << abs(x1 - x2) * abs(y1 - y2) << endl << endl << endl;
+}
+
+void treugl()
+{
+	cout << "Задание 5: Найти периметр и площадь треугольника" << endl << endl;
+	double x1, x2, x3, y1, y2, y3;
+	cout << "Введите координаты x1,y1" << endl;
+	cin >> x1 >> y1;
+	cout << "Введите координаты x2,y2" << endl;
+	cin >> x2 >> y2;
+	cout << "Введите координаты x3,y3" << endl;
+	cin >> x3 >> y3;
+	double A,B,C,P;
+	A = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+	B = sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
+	C = sqrt((x3 - x2) * (x3 - x2) + (y3 - y2) * (y3 - y2));
+	P = (A + B + C) / 2;
+	if ((A==B) and (A==B) and (B==C))
+	{
+		cout << "Треугольник - правильный, его площадь равна = " << (A * A * sqrt(3)) / 4;
+		cout << "Периметр данного треугольника равен = " << A * 3;
+	}
+	if ((A != B) and (A != C) and (B != C))
+	{
+		cout << "Треугольник - произвольный, его площадь равна = " << sqrt(P * (P - A) * (P - B) * (P - C));
+		cout << "Периметр данного треугольника равен = " << A + B + C;
+	}
+}
+
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	double x1, x2,y1,y2;
+	cout << "Введите координаты x1,y1: " << endl;
+	cin >> x1 >> y1;
+	cout << "Введите координаты x2,y2: " << endl;
+	cin >> x2 >> y2;
+	cout << "Расстояние между точками равно = " << sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)))<<endl<<endl<<endl;
+	tree();
+	TochkaC();
+	Pramougl();
+	treugl();
+	return 0;
+}
