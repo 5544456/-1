@@ -1,0 +1,86 @@
+#include <iostream>;
+#include <cmath>;
+using namespace std;
+
+
+void pass()
+{
+	int empty;
+	cout << "Введите любой символ: ";
+	cin >> empty;
+	system("cls");
+}
+
+void five()
+{
+	cout << "Задание 5: Дано трехзначное число. В нем зачеркнули первую слева цифру и приписали ее справа. Вывести полученное число" << endl << endl;
+	int x;
+	cout << "Введите трехзначное число: ";
+	cin >> x;
+	int k = x % 100;
+	int v = x / 100;
+	cout << "Ответ: " << k << v << endl;
+	pass();
+}
+
+void four()
+{
+	cout << "Задание 4:Вывести число, полученное при перестановке цифр исходного числа" << endl << endl;
+	int X;
+	cout << "Введите двухзначное число: ";
+	cin >> X;
+	int p = X % 10;
+	int v = X / 10;
+	cout << "Ответ: " << p << v << endl;
+	pass();
+
+}
+
+void three()
+{
+	cout << "Задание 3: Найти длину незанятой части А" << endl << endl;
+	int A, B;
+	int k = 0;
+	cout << "Введите длину отрезка А и длину отрезка В: ";
+	cin >> A >> B;
+	while (A > B)
+	{
+		k = k + 1;
+		A = A - B;
+	}
+	cout << "Длина незанятой части отрезка А равна = " << A << endl;
+		pass();
+}
+
+void two()
+{
+	cout << "Задание 2: Найти количество отрезков B, размещенных на отрезке A" << endl << endl;
+	int A, B;
+	int k = 0;
+	cout << "Введите длину отрезка А и длину отрезка В: ";
+	cin >> A >> B;
+	while (A > B)
+	{
+		k = k + 1;
+		A = A - B;
+	}
+	cout << "Кол-во отрезков В равно = " << k << endl << endl;
+	pass();
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	cout << "Задание 1: Найти количество полных килобайтов, которые занимает данный файл" << endl << endl;
+	int b;
+	cout << "Введите кол-во байт: ";
+	cin >> b;
+	double k = b / 1024;
+	cout << "Кол-во полных килобайтов, которые занимают файл равно = " << floor(k) << endl << endl;
+	pass();
+	two();
+	three();
+	four();
+	five();
+	return 0;
+}
