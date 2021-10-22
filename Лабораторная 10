@@ -9,6 +9,69 @@ void pass()
 	system("cls");
 }
 
+void seven()
+{
+	cout << "Задание 7:Проверить существует ли треугольник со сторонами a,b,c" << endl << endl;
+	int a, b, c;
+	cout << "Введите стороны a,b,c:";
+	cin >> a >> b >> c;
+	if ((a + b > c) and (a + c > b) and (c + b > a))
+	{
+		cout << "Треугольник существует" << endl << endl;
+	}
+	else
+	{
+		cout << "Треугольник не существует" << endl << endl;
+	}
+	pass();
+}
+
+void six()
+{
+	cout << "Задание 6: Проверить является ли треугольниук со сторонами a,b,c прямоугольным(или каким-либо другим)" << endl << endl;;
+	int a, b, c;
+	cout << "Введите стороны треугольника:";
+	cin >> a >> b >> c;
+	if ((a * a + b * b == c * c) or (b * b + c * c == a * a) or (c * c + a * a == b * b))
+	{
+		cout << "Треугольник прямоугольный" << endl << endl;
+	}
+	if (((a == b) and (a!=c)) or ((a == c) and(a!=b)) or ((c == b) and (c!=a)))
+	{
+		cout << "Треугольник равнобедренный" << endl << endl;
+	}
+	if ((a == b) and(a== c))
+	{
+		cout << "Треугольник равносторонний" << endl << endl;
+	}
+	if ((a != b) and (a != c) and (c != b)and(a * a + b * b != c * c) and (b * b + c * c != a * a) and (c * c + a * a != b * b))
+	{
+		cout << "Треугольник произвольный" << endl << endl;
+	}
+	pass();
+}
+
+void five()
+{
+	cout << "Задание 5: Определить является ли четырёхзначное число палиндромом(В обе стороны читается одинаково" << endl << endl;
+	int A;
+	cout << "Введите четырёхзначное число:";
+	cin >> A;
+	int B = (A / 100);
+	int K = B % 10;
+	int V = B / 10;
+	int S = K * 10 + V;
+	if ((A % 100) == S)
+	{
+		cout << "Число является палиндромом" << endl << endl;
+	}
+	else
+	{
+		cout << "Число не является палиндромом" << endl << endl;
+	}
+	pass();
+}
+
 void four()
 {
 	cout << "Задание 4: Проверить истинность высказывания: «Цифры данного числа образуют возрастающую или убывающую последовательность»" << endl;
@@ -18,7 +81,7 @@ void four()
 	int B = A / 100;
 	int C = A % 100 / 10;
 	int D = A % 10;
-	if (B < C&&C < D)
+	if (B < C && C < D)
 	{
 		cout << "Последовательность возрастающая" << endl << endl;
 	}
@@ -26,7 +89,7 @@ void four()
 	{
 		cout << "Последовательности нет" << endl << endl;
 	}
-	if(B>C&&C>D)
+	if (B > C && C > D)
 	{
 		cout << "Последовательность убывающая" << endl << endl;
 	}
@@ -44,13 +107,13 @@ void three()
 	cout << "Введите число:";
 	cin >> A;
 	int B = A;
-	if (A<100 && A>9)
+	if (A < 100 && A>9)
 	{
-		cout << "Число двузначное"<<endl<<endl;
+		cout << "Число двузначное" << endl << endl;
 	}
 	else
 	{
-		cout << "Число не является двузначным"<<endl<<endl;
+		cout << "Число не является двузначным" << endl << endl;
 	}
 	pass();
 }
@@ -61,7 +124,7 @@ void two()
 	int A, B, C;
 	cout << "Введите А, В, C:";
 	cin >> A >> B >> C;
-	if (A<B and B<C)
+	if (A < B and B < C)
 	{
 		cout << "Высказывание истинно" << endl << endl;
 	}
@@ -75,21 +138,24 @@ void two()
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	cout << "Задание 1: Проверить истинность высказывания: «Справедливы неравенства A > 2 и B <= 3»"<<endl;
+	cout << "Задание 1: Проверить истинность высказывания: «Справедливы неравенства A > 2 и B <= 3»" << endl;
 	int A, B;
 	cout << "Введите А и В:";
 	cin >> A >> B;
 	if ((A > 2) and (B <= 3))
 	{
-		cout << "Высказывание истинно"<<endl<<endl;
+		cout << "Высказывание истинно" << endl << endl;
 	}
 	else
 	{
-		cout << "Высказывание ложно"<<endl<<endl;
+		cout << "Высказывание ложно" << endl << endl;
 	}
 	pass();
 	two();
 	three();
 	four();
+	five();
+	six();
+	seven();
 	return 0;
 }
