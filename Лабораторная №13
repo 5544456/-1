@@ -1,0 +1,114 @@
+#include <iostream>
+using namespace std;
+
+void pass()
+{
+	int empty;
+	cout << "Введите любой символ: ";
+	cin >> empty;
+	system("cls");
+}
+
+void four()
+{
+	cout << "Задание №5: Используя один цикл, найти значение выражения: 1 - A + A2 - A3 + . ..(+-) A^N ." << endl << endl;
+	int N;
+	int V = 1;
+	int S = 1;
+	int K = 1;
+	int L = -1;
+	cout << "Введите целое число N(>0):";
+	cin >> N;
+	cout << "Введите вещественное число А:";
+	double A;
+	cin >> A;
+	A = A * (-1);
+	while (S <= N)
+	{
+		V = V + pow(A, K);
+		S += 1;
+		K += 1;
+		cout << "Сумма = " << V<<endl;
+	}
+	pass();
+}
+
+void three()
+{
+	cout << "Задание №4: Используя один цикл, найти сумму 1 + A + A2 + A3 + . . . + A^N" << endl << endl;
+	int N;
+	int V = 1;
+	int S = 1;
+	cout << "Введите целое число N(>0):";
+	cin >> N;
+	cout << "Введите вещественное число А:";
+	double A;
+	cin >> A;
+	while (V <= N)
+	{
+		S =S+ pow(A, V);
+		V += 1;
+		cout << "Сумма = " << S << endl;
+	}
+	pass();
+}
+
+void two()
+{
+	cout << "Задание №3: Найти квадрат данного числа, используя для его вычисления следующую формулу: N^2 = 1 + 3 + 5 + . . . + (2·N − 1)." << endl << endl;
+	int N;
+	cout << "Введите целое число N(>0):";
+	cin >> N;
+	int N1 = pow(N, 2);
+	int K = 1;
+	int V = 1;
+	while ((N1> K) or (K<(2*N-1)))
+	{
+		V += 2;
+		K = K + V;
+		cout << "Текущая сумма = " << K << endl;	
+	}
+	pass();
+}
+
+void one()
+{
+	cout << "Задание №2: Найти произведение 1.1 · 1.2 · 1.3 · . . . (N сомножителей)." << endl << endl;
+	int N;
+	double V = 1;
+	int K = 1;
+	double pr = 1;
+	cout << "Введите целое число N(>0):";
+	cin >> N;
+	while (K <= N)
+	{
+		V += 0.1;
+		pr = pr * V;
+		K += 1;
+		cout << "Произведение = " << pr << endl << endl;
+	}
+
+	pass();
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	cout << "Задание №1: Вывести стоимость 0.1, 0.2, . . . , 1 кг конфет." << endl << endl;
+	double A;
+	double S = 0.1;
+	cout << "Введите цену 1 кг конфет:";
+	cin >> A;
+	while (S < 1)
+	{
+		double K = S * A;
+		cout << "Стоимость " << S << " кг конфет = " << K << endl << endl;
+		S += 0.1;
+	}
+	pass();
+	one();
+	two();
+	three();
+	four();
+	return 0;
+}
