@@ -18,8 +18,7 @@ void five()
 	int N;
 	cin >> N;
 	int K = abs(1984 - N);
-	int S = K/60;
-	int V = abs(S * 60 - K);
+	int S = K % 60;
 	string green = "Зеленой ";
 	string red = "Красной ";
 	string yellow = "Жёлтой ";
@@ -37,31 +36,127 @@ void five()
 	string ten = "курицы ";
 	string eleven = "собаки ";
 	string twelve = "свиньи ";
-	switch (V < 12)
+	switch (S)
 	{
-	case 1:cout << "Год: " <<green+one;
+	case 0:cout << "Год: " << green << one;
 		break;
-	case 2:cout << "Год: " <<green+two  ;
+	case 1:cout << "Год: " << green << two;
 		break;
-	case 3:cout << "Год: Зелёного " <<three  ;
+	case 2:cout << "Год: Зелёного " << three;
 		break;
-	case 4:cout << "Год: Зелёного " <<four  ;
+	case 3:cout << "Год: Зелёного " << four;
 		break;
-	case 5:cout << "Год: Зелёного " <<five   ;
+	case 4:cout << "Год: Зелёного " << five;
 		break;
-	case 6:cout << "Год: " <<green + six  ;
+	case 5:cout << "Год: " << green << six;
 		break;
-	case 7:cout << "Год: " <<green +seven  ;
+	case 6:cout << "Год: " << green + seven;
 		break;
-	case 8:cout << "Год: " <<green + eight ;
+	case 7:cout << "Год: " << green + eight;
 		break;
-	case 9:cout << "Год: " <<green  + nine;
+	case 8:cout << "Год: " << green + nine;
 		break;
-	case 10:cout << "Год: " <<green  +ten  ;
+	case 9:cout << "Год: " << green + ten;
 		break;
-	case 11:cout << "Год: " <<green + eleven ;
+	case 10:cout << "Год: " << green + eleven;
 		break;
-	case 12:cout << "Год: " <<green + twelve;
+	case 11:cout << "Год: " << green + twelve;
+		break;
+	case 12:cout << "Год: " << red + one;
+		break;
+	case 13:cout << "Год: " << red + two;
+		break;
+	case 14:cout << "Год: Красного " << three;
+		break;
+	case 15:cout << "Год: Красного " << four;
+		break;
+	case 16:cout << "Год: Красного " << five;
+		break;
+	case 17:cout << "Год: " << red + six;
+		break;
+	case 18:cout << "Год: " << red + seven;
+		break;
+	case 19:cout << "Год: " << red + eight;
+		break;
+	case 20:cout << "Год: " << red + nine;
+		break;
+	case 21:cout << "Год: " << red + ten;
+		break;
+	case 22:cout << "Год: " << red + eleven;
+		break;
+	case 23:cout << "Год: " << red + twelve;
+		break;
+	case 24:cout << "Год: " << yellow + one;
+		break;
+	case 25:cout << "Год: " << yellow + two;
+		break;
+	case 26:cout << "Год: Жёлтого " << three;
+		break;
+	case 27:cout << "Год: Жёлтого " << four;
+		break;
+	case 28:cout << "Год: Жёлтого " << five;
+		break;
+	case 29:cout << "Год: " << yellow + six;
+		break;
+	case 30:cout << "Год: " << yellow + seven;
+		break;
+	case 31:cout << "Год: " << yellow + eight;
+		break;
+	case 32:cout << "Год: " << yellow + nine;
+		break;
+	case 33:cout << "Год: " << yellow + ten;
+		break;
+	case 34:cout << "Год: " << yellow + eleven;
+		break;
+	case 35:cout << "Год: " << yellow + twelve;
+		break;
+	case 36:cout << "Год: " << white + one;
+		break;
+	case 37:cout << "Год: " << white << two;
+		break;
+	case 38:cout << "Год: Белого " << three;
+		break;
+	case 39:cout << "Год: Белого " << four;
+		break;
+	case 40:cout << "Год: Белого " << five;
+		break;
+	case 41:cout << "Год: " << white + six;
+		break;
+	case 42:cout << "Год: " << white + seven;
+		break;
+	case 43:cout << "Год: " << white + eight;
+		break;
+	case 44:cout << "Год: " << white + nine;
+		break;
+	case 45:cout << "Год: " << white + ten;
+		break;
+	case 46:cout << "Год: " << white + eleven;
+		break;
+	case 47:cout << "Год: " << white + twelve;
+		break;
+	case 48:cout << "Год: " << black + one;
+		break;
+	case 49:cout << "Год: " << black + two;
+		break;
+	case 50:cout << "Год: Чёрного " << three;
+		break;
+	case 51:cout << "Год: Чёрного " << four;
+		break;
+	case 52:cout << "Год: Чёрного " << five;
+		break;
+	case 53:cout << "Год: " << black + six;
+		break;
+	case 54:cout << "Год: " << black + seven;
+		break;
+	case 55:cout << "Год: " << black + eight;
+		break;
+	case 56:cout << "Год: " << black + nine;
+		break;
+	case 57:cout << "Год: " << black + ten;
+		break;
+	case 58:cout << "Год: " << black + eleven;
+		break;
+	case 59:cout << "Год: " << black + twelve;
 		break;
 	}
 	cout << " " << endl << endl;
@@ -114,7 +209,7 @@ void four()
 	case 9:cout << "девясто ";
 		break;
 	}
-	if ((K % 100> 20)or(K%100<10))
+	if ((K % 100 > 20) or (K % 100 < 10))
 	{
 		switch (K % 10)
 		{
@@ -165,7 +260,7 @@ void four()
 
 void three()
 {
-	cout << "Задание №3: Вывести строку-описание указанного количества заданий, обеспечив правильное согласование числа со словами «учебное задание»"<<endl<<endl;
+	cout << "Задание №3: Вывести строку-описание указанного количества заданий, обеспечив правильное согласование числа со словами «учебное задание»" << endl << endl;
 	cout << "Введите кол-во учебных заданий(от 10 до 40):";
 	int K;
 	cin >> K;
@@ -204,9 +299,9 @@ void three()
 		break;
 	case 9:cout << "девять " << M;
 		break;
-	case 10:cout<<"Десять " <<M;
+	case 10:cout << "Десять " << M;
 		break;
-	case 11:cout << "Одиннадцать "<<M;
+	case 11:cout << "Одиннадцать " << M;
 		break;
 	case 12:cout << "Двенадцать " << M;
 		break;
@@ -224,47 +319,47 @@ void three()
 		break;
 	case 19:cout << "Девятнадцать " << M;
 		break;
-	case 20:cout << DW<<" " << M;
+	case 20:cout << DW << " " << M;
 		break;
-	case 21:cout << DW+OD+O;
+	case 21:cout << DW + OD + O;
 		break;
-	case 22:cout << DW +D+N;
+	case 22:cout << DW + D + N;
 		break;
-	case 23:cout << DW +T+N;
+	case 23:cout << DW + T + N;
 		break;
-	case 24:cout << DW +CH+N;
+	case 24:cout << DW + CH + N;
 		break;
-	case 25:cout << DW+P+M;
+	case 25:cout << DW + P + M;
 		break;
-	case 26:cout << DW +SH+M;
+	case 26:cout << DW + SH + M;
 		break;
-	case 27:cout << DW +S+M;
+	case 27:cout << DW + S + M;
 		break;
-	case 28:cout << DW+V+M;
+	case 28:cout << DW + V + M;
 		break;
-	case 29:cout << DW+DEW+M;
+	case 29:cout << DW + DEW + M;
 		break;
 	case 30:cout << TR << " " << M;
 		break;
-	case 31:cout << TR+OD+O;
+	case 31:cout << TR + OD + O;
 		break;
-	case 32:cout << TR +D+N;
+	case 32:cout << TR + D + N;
 		break;
-	case 33:cout << TR +T+N;
+	case 33:cout << TR + T + N;
 		break;
-	case 34:cout << TR +CH+N;
+	case 34:cout << TR + CH + N;
 		break;
-	case 35:cout << TR +P +M;
+	case 35:cout << TR + P + M;
 		break;
-	case 36:cout << TR +SH+M;
+	case 36:cout << TR + SH + M;
 		break;
-	case 37:cout << TR +S+M;
+	case 37:cout << TR + S + M;
 		break;
-	case 38:cout << TR +V+M;
+	case 38:cout << TR + V + M;
 		break;
-	case 39:cout << TR +DEW+M;
+	case 39:cout << TR + DEW + M;
 		break;
-	case 40:cout << CO+M;
+	case 40:cout << CO + M;
 	}
 	cout << " " << endl;
 	pass();
@@ -283,11 +378,11 @@ void two()
 	cin >> a >> F;
 	if ((F == "С") and (a == 0))
 	{
-		cout << "Робот продолжает движение на Север" << endl<<endl;
+		cout << "Робот продолжает движение на Север" << endl << endl;
 	}
-	if ((F=="Ю") and (a == 0))
+	if ((F == "Ю") and (a == 0))
 	{
-		cout << "Робот продолажет движение на Юг" << endl<<endl;
+		cout << "Робот продолажет движение на Юг" << endl << endl;
 	}
 	if ((F == "З") and (a == 0))
 	{
@@ -295,7 +390,7 @@ void two()
 	}
 	if ((F == "В") and (a == 0))
 	{
-		cout << "Робот продолжает движение на Восток"<<endl<<endl;
+		cout << "Робот продолжает движение на Восток" << endl << endl;
 	}
 	if ((F == "С") and (a == 1))
 	{
@@ -359,7 +454,7 @@ int main()
 	}
 	if (D == 5)
 	{
-		cout <<"Пятое" << " ";
+		cout << "Пятое" << " ";
 	}
 	if (D == 6)
 	{
@@ -459,7 +554,7 @@ int main()
 	}
 	if (D == 30)
 	{
-		cout << "Тридцатое" << " " ;
+		cout << "Тридцатое" << " ";
 	}
 	if (D == 31)
 	{
