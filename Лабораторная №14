@@ -1,0 +1,135 @@
+#include <iostream>
+using namespace std;
+
+void pass()
+{
+	int empty;
+	cout << "Введите любой символ: ";
+	cin >> empty;
+	system("cls");
+}
+
+void six()
+{
+	cout << "Задание №6: Найти целое число K — порядковый номер числа Фибоначчи N" << endl << endl;
+	cout << "Введите целое число N(>1):";
+	int N;
+	int C = 2;
+	int A = 0;
+	int B = 1;
+	cin >> N;
+	while (N>A+B)
+	{
+		A += B;
+		B += A;
+		C += 2;
+		if (A + B == N)
+		{
+			cout << C + 1 << endl;
+		}
+		if (A + B > N)
+		{
+			cout << C << endl;
+		}
+	}
+	pass();
+}
+
+void five()
+{
+	cout << "Задание №5: Найти наибольший общий делитель (НОД), используя алгоритм Евклида" << endl << endl;
+	cout << "Введите А и В:";
+	int A, B;
+	cin >> A >> B;
+	while (A != B)
+	{
+		if (A > B)
+		{
+			A -= B;
+		}
+		else
+			B -= A;
+	}
+	cout << "НОД = " << A << endl << endl;
+	pass();
+}
+
+void four()
+{
+	cout << "Задание №4: По данному P определить, через сколько месяцев размер вклада превысит 1100 руб., и вывести найденное количество месяцев K (целое число) и итоговый размер вклада S (вещественное число)." << endl << endl;
+	int K=0;
+	double V = 1000;
+	double S, P;
+	cout << "Введите кол-во процентов(0...25):";
+	cin >> P;
+	while (V <= 1100)
+	{
+		V = V + V / 100 * P;
+		K += 1;
+	}
+	cout << "Кол-во прошедших месяцев = " << K << endl;
+	cout << "Итоговый размер вклада = "<<V << endl << endl;
+	pass();
+}
+
+void three()
+{
+	cout << "Задание №3: Вывести наименьшее из целых чисел K, для которых сумма 1 + 2 + . . . + K будет больше или равна сумме N, и саму эту сумму." << endl << endl;
+	int numN, supp = 0, answer = 0;
+	cout << "Введите N:";
+	cin >> numN;
+	while (supp < numN) {
+		answer += 1;
+		supp = supp + answer;
+	}
+	cout << "Сумма = " << answer << endl;
+	cout << "К = " << supp << endl << endl;
+	pass();
+}
+
+void two()
+{
+	cout << "Задание №2:На отрезке длины A размещено максимально возможное количество отрезков длины B" << endl << endl;
+	cout << "Введите А и В и (A>B) :";
+	int A, B;
+	int K = 0;
+	cin >> A >> B;
+	int V = A;
+	while (A > B)
+	{
+		A -= B;
+		K += 1;
+		V -= B;
+	}
+	cout <<"Кол-во отрезков В = "<< K << endl;
+	cout << "Длина незанятой части A = " << V << endl << endl;
+
+	pass();
+}
+
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	cout << "Задание №1:Вывести все целые числа от A до B включительно; при этом каждое число должно выводиться столько раз, каково его значение" << endl << endl;
+	int K,V,A, B;
+	cout << "Введите числа А и В и (А<B) :";
+	cin >> A >> B;
+	int i = A;
+	cout << "Ответ = ";
+	for (i; i <= B; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			cout << i << " ";
+		}
+	}
+	cout << endl << endl;
+	pass();
+	two();
+	three();
+	four();
+	five();
+	six();
+	return 0;
+}
